@@ -3,97 +3,109 @@ unit uFrmSetup;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics,
-  Controls, Forms, Dialogs, sLabel, StdCtrls, sCheckBox,
-  sRadioButton, sButton, uFraSetupDownloadOptions, ComCtrls, ExtCtrls, sPanel,
-  sBevel, uFraSetupWelcome, sPageControl, uSharedGlobals, sEdit, sListBox,
-  sTreeView, VirtualTrees, uML, sGauge, uTFile, sevenzip,
-  uBundle, acAlphaHints, Mask, sMaskEdit,
-  sCustomComboEdit, sComboEdit, sDialogs, sGroupBox, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient, IdHTTP, IdSSLOpenSSL;
-
-  // sHintManager
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls,
+  ComCtrls, ExtCtrls, uSharedGlobals, VirtualTrees, uML, uTFile, sevenzip, uBundle, Mask,
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, IdSSLOpenSSL, Vcl.Buttons;
 
 type
   TfrmSetup = class(TForm)
-    panBottom: TsPanel;
-    btnNext: TsButton;
-    btnCancel: TsButton;
     pagTabs: TPageControl;
     tabWelcome: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
-    sLabel1: TsLabel;
-    vstMASM: TVirtualStringTree;
-    sLabel5: TsLabel;
-    lblMicrosofSDKDescription: TsLabel;
-    sLabel3: TsLabel;
-    lblMASM32Description: TsLabel;
-    optx86: TsRadioButton;
-    optx64: TsRadioButton;
-    optItanium: TsRadioButton;
-    chkMicrosoftSDK: TsCheckBox;
-    chkMASM32: TsCheckBox;
-    btnBack: TsButton;
     tabConfirmDownloadSources: TTabSheet;
-    sLabel2: TsLabel;
-    sLabelFX1: TsLabelFX;
-    sLabelFX2: TsLabelFX;
-    sLabelFX3: TsLabelFX;
-    sLabelFX4: TsLabelFX;
-    sLabel6: TsLabel;
-    lstDownloadSources: TsListBox;
     TabSheet5: TTabSheet;
-    sLabelFX5: TsLabelFX;
-    sLabel4: TsLabel;
-    optLocate: TsRadioButton;
-    optDownload: TsRadioButton;
     TabSheet6: TTabSheet;
-    sGauge1: TsGauge;
-    sLabelFX6: TsLabelFX;
-    sLabel7: TsLabel;
-    lblDownloading: TsLabel;
-    lblDownloadCurrentAction: TsLabel;
     TabSheet7: TTabSheet;
-    gagDecompress: TsGauge;
-    sLabelFX7: TsLabelFX;
-    sLabel8: TsLabel;
-    sAlphaHints1: TsAlphaHints;
-    treMASM: TsTreeView;
     pagFileLocations: TTabSheet;
-    sLabelFX8: TsLabelFX;
-    opnFile: TsOpenDialog;
-    grp64Bit: TsGroupBox;
-    sLabel13: TsLabel;
-    sLabel14: TsLabel;
-    sLabel15: TsLabel;
-    txtML64: TsComboEdit;
-    txtLink64: TsComboEdit;
-    txtRC64: TsComboEdit;
-    grp32Bit: TsGroupBox;
-    sLabel10: TsLabel;
-    sLabel11: TsLabel;
-    sLabel12: TsLabel;
-    txtML32: TsComboEdit;
-    txtLink32: TsComboEdit;
-    txtRC32: TsComboEdit;
-    grp16Bit: TsGroupBox;
-    sLabel9: TsLabel;
-    sLabel16: TsLabel;
-    sLabel17: TsLabel;
-    txtML16: TsComboEdit;
-    txtLink16: TsComboEdit;
-    txtRC16: TsComboEdit;
     tabCompleted: TTabSheet;
-    sLabelFX9: TsLabelFX;
-    sLabel18: TsLabel;
-    btnClose: TsButton;
-    sLabel19: TsLabel;
-    txtLIB16: TsComboEdit;
-    sLabel20: TsLabel;
-    txtLIB64: TsComboEdit;
-    sLabel21: TsLabel;
-    txtLIB32: TsComboEdit;
+    GroupBox5: TGroupBox;
+    Label2: TLabel;
+    SpeedButton1: TSpeedButton;
+    txtSDKIncludePath: TEdit;
+    GroupBox3: TGroupBox;
+    Label11: TLabel;
+    SpeedButton10: TSpeedButton;
+    Label12: TLabel;
+    SpeedButton11: TSpeedButton;
+    Label13: TLabel;
+    SpeedButton12: TSpeedButton;
+    Label14: TLabel;
+    SpeedButton13: TSpeedButton;
+    txtML32: TEdit;
+    txtLink32: TEdit;
+    txtRC32: TEdit;
+    txtLIB32: TEdit;
+    GroupBox2: TGroupBox;
+    Label7: TLabel;
+    SpeedButton6: TSpeedButton;
+    Label8: TLabel;
+    SpeedButton7: TSpeedButton;
+    Label9: TLabel;
+    SpeedButton8: TSpeedButton;
+    Label10: TLabel;
+    SpeedButton9: TSpeedButton;
+    txtML64: TEdit;
+    txtLink64: TEdit;
+    txtRC64: TEdit;
+    txtLIB64: TEdit;
+    GroupBox4: TGroupBox;
+    Label3: TLabel;
+    SpeedButton2: TSpeedButton;
+    Label4: TLabel;
+    SpeedButton3: TSpeedButton;
+    Label5: TLabel;
+    SpeedButton4: TSpeedButton;
+    Label6: TLabel;
+    SpeedButton5: TSpeedButton;
+    txtML16: TEdit;
+    txtLink16: TEdit;
+    txtRC16: TEdit;
+    txtLIB16: TEdit;
+    opnFile: TOpenDialog;
+    Label1: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    panBottom2: TPanel;
+    btnBack: TButton;
+    btnClose: TButton;
+    btnNext: TButton;
+    Label25: TLabel;
+    Label26: TLabel;
+    lstDownloadSources: TListBox;
+    Label27: TLabel;
+    ProgressBar1: TProgressBar;
+    Label28: TLabel;
+    treMASM: TTreeView;
+    Label29: TLabel;
+    optDownload: TRadioButton;
+    optLocate: TRadioButton;
+    gagDecompress: TProgressBar;
+    Label30: TLabel;
+    chkMASM32: TCheckBox;
+    lblMASM32Description: TLabel;
+    chkMicrosoftSDK: TCheckBox;
+    lblMicrosofSDKDescription: TLabel;
+    optx86: TRadioButton;
+    optx64: TRadioButton;
+    optItanium: TRadioButton;
+    lblDownloadCurrentAction: TLabel;
+    lblDownloading: TLabel;
+    tabFileAssociations: TTabSheet;
+    Label31: TLabel;
+    GroupBox7: TGroupBox;
+    chkASM: TCheckBox;
+    chkINC: TCheckBox;
+    chkRC: TCheckBox;
+    Label32: TLabel;
     procedure btnCancelClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
@@ -128,6 +140,7 @@ type
     procedure txtLIB64ButtonClick(Sender: TObject);
     procedure txtLIB16ButtonClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
+    procedure txtSDKIncludePathButtonClick(Sender: TObject);
   private
     lastHintNode : TTreeNode;
     FDownloadMASM: boolean;
@@ -148,6 +161,7 @@ type
     procedure SaveFileLocations;
     procedure HttpWork(ASender: TObject; AWorkMode: TWorkMode; AWorkCount: Int64);
     procedure DownloadDotNet;
+    procedure AssociateFiles;
   public
     { Public declarations }
   end;
@@ -165,9 +179,9 @@ uses
 function ProgressCallback(sender: Pointer; total: boolean; value: int64): HRESULT; stdcall;
 begin
   if total then
-    frmSetup.gagDecompress.MaxValue := value
+    frmSetup.gagDecompress.Max := value
   else
-    frmSetup.gagDecompress.Progress := value;
+    frmSetup.gagDecompress.Position := value;
   Result := S_OK;
   Application.ProcessMessages;
 end;
@@ -244,21 +258,21 @@ begin
   path := ExtractFilePath(ml.FoundFileName);
 
   // 32-bit
-  if FileExists(path+ml.Linker32Bit.OriginalFileName) then
+  if FileExistsStripped(path+ml.Linker32Bit.OriginalFileName) then
     ml.Linker32Bit.FoundFileName := path+ml.Linker32Bit.OriginalFileName;
   if length(ml.Linker32Bit.FoundFileName)>0 then
     txtLink32.Text := ml.Linker32Bit.FoundFileName
   else
     txtLink32.Text := ml.Linker32Bit.OriginalFileName;
 
-  if FileExists(path+ml.RC.OriginalFileName) then
+  if FileExistsStripped(path+ml.RC.OriginalFileName) then
     ml.RC.FoundFileName := path+ml.RC.OriginalFileName;
   if length(ml.RC.FoundFileName)>0 then
     txtRC32.Text := ml.RC.FoundFileName
   else
     txtRC32.Text := ml.RC.OriginalFileName;
 
-  if FileExists(path+ml.LIB.OriginalFileName) then
+  if FileExistsStripped(path+ml.LIB.OriginalFileName) then
     ml.LIB.FoundFileName := path+ml.LIB.OriginalFileName;
   if length(ml.LIB.FoundFileName)>0 then
     txtLIB32.Text := ml.LIB.FoundFileName
@@ -294,7 +308,7 @@ begin
   end;
 
   // 16-bit
-  if FileExists(path+ml.Linker16Bit.OriginalFileName) then
+  if FileExistsStripped(path+ml.Linker16Bit.OriginalFileName) then
     ml.Linker16Bit.FoundFileName := path+ml.Linker16Bit.OriginalFileName;
   if length(ml.Linker16Bit.FoundFileName)>0 then
     txtLink16.Text := ml.Linker16Bit.FoundFileName
@@ -306,13 +320,12 @@ procedure TfrmSetup.FormCreate(Sender: TObject);
 begin
   FDownloadMASM := true;
   FFoundMASMs := TStringList.Create;
-  vstMASM.NodeDataSize := SizeOf(TGenericTreeData);
 end;
 
 procedure TfrmSetup.FormShow(Sender: TObject);
 var
   bundle: TBundle;
-  ml: TML;
+//  ml: TML;
 begin
   FCurrentPage := 0;
   pagTabs.ActivePageIndex := FCurrentPage;
@@ -321,7 +334,7 @@ begin
   btnClose.Visible := false;
 
   bundle := TBundle(dm.Bundles.Objects[0]);
-  ml := TML(bundle.MASMFiles.Objects[0]);
+//  ml := TML(bundle.MASMFiles.Objects[0]);
   chkMASM32.Caption := bundle.ProductName;
   lblMASM32Description.Caption := bundle.Description;
 
@@ -347,15 +360,15 @@ end;
 procedure TfrmSetup.LocateMASMs;
 var
   path: string;
-  rootNode: PVirtualNode;
-  node: PVirtualNode;
-  childNode: PVirtualNode;
-  data: PGenericTreeData;
-  foundFiles: TStringlist;
-  fileOutput: TStringlist;
-  i,x: Integer;
+//  rootNode: PVirtualNode;
+//  node: PVirtualNode;
+//  childNode: PVirtualNode;
+//  data: PGenericTreeData;
+//  foundFiles: TStringlist;
+//  fileOutput: TStringlist;
+  i: Integer;
   ml: TML;
-  foundML: TML;
+//  foundML: TML;
   vsDir: string;
   treeNode: TTreeNode;
   bundle: TBundle;
@@ -364,7 +377,6 @@ begin
     Screen.Cursor := crHourGlass;
 
     FFoundMASMs.Clear;
-    vstMASM.Clear;
 
     path := GetEnvVarValue('path');
     SearchForPossibleFiles(path);
@@ -473,13 +485,13 @@ begin
           foundML := TML.Create();
           foundML.FoundFileName := foundFiles[x];
           foundDir := ExtractFilePath(foundML.FoundFileName);
-          if FileExists(foundDir+ml.Linker32Bit.OriginalFileName) then
+          if FileExistsStripped(foundDir+ml.Linker32Bit.OriginalFileName) then
             foundML.Linker32Bit.FoundFileName := foundDir+ml.Linker32Bit.OriginalFileName;
-          if FileExists(foundDir+ml.Linker16Bit.OriginalFileName) then
+          if FileExistsStripped(foundDir+ml.Linker16Bit.OriginalFileName) then
             foundML.Linker16Bit.FoundFileName := foundDir+ml.Linker16Bit.OriginalFileName;
-          if FileExists(foundDir+ml.RC.OriginalFileName) then
+          if FileExistsStripped(foundDir+ml.RC.OriginalFileName) then
             foundML.RC.FoundFileName := foundDir+ml.RC.OriginalFileName;
-          if FileExists(foundDir+ml.LIB.OriginalFileName) then
+          if FileExistsStripped(foundDir+ml.LIB.OriginalFileName) then
             foundML.LIB.FoundFileName := foundDir+ml.LIB.OriginalFileName;
           foundML.MD5Hash := MD5FileHash(foundML.FoundFileName);
           foundML := MapMLtoFoundML(ml, foundML);
@@ -540,7 +552,7 @@ procedure TfrmSetup.vstMASMGetText(Sender: TBaseVirtualTree;
   var CellText: WideString);
 var
   Data: PGenericTreeData;
-  project: TProject;
+//  project: TProject;
   ml: TML;
 begin
   Data := Sender.GetNodeData(Node);
@@ -636,17 +648,17 @@ procedure TfrmSetup.HttpsClientProgress(Sender: TObject; Total,
   Current: Int64; var Cancel: Boolean);
 begin
 //  sGauge1.MaxValue := Total;
-  sGauge1.Progress := Current;
+  ProgressBar1.Position := Current;
   Application.ProcessMessages;
 end;
 
 procedure TfrmSetup.Downloading;
 var
-  error: string;
-  fs: TFileStream;
-  saveFileAs: string;
+//  error: string;
+//  fs: TFileStream;
+//  saveFileAs: string;
   bundle: TBundle;
-  ml: TML;
+//  ml: TML;
 //  headers: TStringList;
 begin
 //  FCertificateValidator := certificateValidator;
@@ -677,7 +689,7 @@ begin
   if chkMASM32.Checked then
   begin
     bundle := TBundle(dm.Bundles.Objects[0]);
-    ml := TML(bundle.MASMFiles.Objects[0]);
+//    ml := TML(bundle.MASMFiles.Objects[0]);
     DownloadFile(bundle);
   end;
 
@@ -689,7 +701,7 @@ begin
     begin
       DownloadDotNet;
     end;
-    ml := TML(bundle.MASMFiles.Objects[0]);
+//    ml := TML(bundle.MASMFiles.Objects[0]);
     DownloadFile(bundle);
   end;
 
@@ -702,7 +714,7 @@ var
   saveFileAs: string;
   Http: TIdHTTP;
   fs: TFileStream;
-  LHandler: TIdSSLIOHandlerSocketOpenSSL;
+//  LHandler: TIdSSLIOHandlerSocketOpenSSL;
 begin
   if not DirectoryExists(dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER) then
     ForceDirectories(dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER);
@@ -716,7 +728,7 @@ begin
   end;
 
   FDownloadSize := bundle.SetupFileSize;
-  sGauge1.MaxValue := FDownloadSize;
+  ProgressBar1.Max := FDownloadSize;
 
   Update;
   lblDownloadCurrentAction.Caption := '';
@@ -771,53 +783,60 @@ var
   Http: TIdHTTP;
   fs: TFileStream;
   LHandler: TIdSSLIOHandlerSocketOpenSSL;
+  downloadAgain: boolean;
 begin
   if not DirectoryExists(dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER) then
     ForceDirectories(dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER);
 
   saveFileAs := dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER+DOT_NET_URL_FILE;
 
+  downloadAgain := true;
   if TFile.Exists(saveFileAs) then
   begin
     if MessageDlg('.NET has already been dowloaded. Download again?',
-      mtInformation,[mbYes,mbNo], 0) = mrNo then exit;
+      mtInformation,[mbYes,mbNo], 0) = mrNo then downloadAgain := false;
   end;
 
   FDownloadSize := DOT_NET_URL_FILE_SIZE;
-  sGauge1.MaxValue := FDownloadSize;
+  ProgressBar1.Max := FDownloadSize;
 
   Update;
-  lblDownloadCurrentAction.Caption := '';
-  lblDownloadCurrentAction.Update;
 
-  lblDownloading.Caption := 'Downloading .NET';
-  lblDownloading.Refresh;
-  try
-    fs := TFileStream.Create(saveFileAs, fmCreate);
-    Http := TIdHTTP.Create(nil);
-    Http.BeginWork(wmRead);
+  if downloadAgain then
+  begin
+    lblDownloadCurrentAction.Caption := '';
+    lblDownloadCurrentAction.Update;
+
+    lblDownloading.Caption := 'Downloading .NET';
+    lblDownloading.Refresh;
     try
-      Http.OnWork:= HttpWork;
-      LHandler := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
-      Http.IOHandler := LHandler;
-      Http.Get(DOT_NET_URL, fs);
-    finally
-      LHandler.Free;
-      fs.Free;
-      Http.Free;
-    end;
-
-    if TFile.Exists(saveFileAs) then
-    begin
-      setupFile := dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER+DOT_NET_URL_FILE;
-      ExecuteAndWait(setupFile);
-    end;
-  except
-    on E : Exception do
-    begin
-      error := E.Message;
+      fs := TFileStream.Create(saveFileAs, fmCreate);
+      Http := TIdHTTP.Create(nil);
+      Http.BeginWork(wmRead);
+      try
+        Http.OnWork:= HttpWork;
+        LHandler := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
+        Http.IOHandler := LHandler;
+        Http.Get(DOT_NET_URL, fs);
+      finally
+        LHandler.Free;
+        fs.Free;
+        Http.Free;
+      end;
+    except
+      on E : Exception do
+      begin
+        error := E.Message;
+      end;
     end;
   end;
+
+  if TFile.Exists(saveFileAs) then
+  begin
+    setupFile := dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER+DOT_NET_URL_FILE;
+    ExecuteAndWait(setupFile);
+  end;
+
 end;
 
 procedure TfrmSetup.DecompressBundles;
@@ -832,7 +851,7 @@ begin
     bundle := TBundle(dm.Bundles.Objects[0]);
     //ml := TML(bundle.Files.Objects[0]);
     fileName := dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER+bundle.PackageDownloadFileName;
-    if FileExists(fileName) then
+    if FileExistsStripped(fileName) then
     begin
       ShowMessage('Visual MASM will now decompress the MASM32 package.');
       Application.ProcessMessages;
@@ -858,7 +877,7 @@ begin
   begin
     bundle := TBundle(dm.Bundles.Objects[1]);
     fileName := dm.VisualMASMOptions.AppFolder+DOWNLOAD_FOLDER+bundle.PackageDownloadFileName;
-    if FileExists(fileName) then
+    if FileExistsStripped(fileName) then
     begin
       ShowMessage('Visual MASM will now decompress the MS SDK package.');
       TabSheet7.Update;
@@ -926,10 +945,10 @@ begin
 end;
 
 function TfrmSetup.NodeHint(tn: TTreeNode): string;
-var
-  bundle: TBundle;
-  ml: TML;
-  description: string;
+//var
+//  bundle: TBundle;
+//  ml: TML;
+//  description: string;
 begin
   if tn.Level = 0 then
   begin
@@ -992,6 +1011,11 @@ begin
   dm.PromptForFile('RC.EXE',txtRC64);
 end;
 
+procedure TfrmSetup.txtSDKIncludePathButtonClick(Sender: TObject);
+begin
+  dm.PromptForPath('Microsoft SDK Include Path',txtSDKIncludePath);
+end;
+
 procedure TfrmSetup.txtML16ButtonClick(Sender: TObject);
 begin
   dm.PromptForFile('ML.EXE',txtML16);
@@ -1050,19 +1074,33 @@ begin
     dm.VisualMASMOptions.ML16.LIB.FoundFileName := txtLIB16.Text;
   if length(txtRC16.Text) > 0 then
     dm.VisualMASMOptions.ML16.RC.FoundFileName := txtRC16.Text;
+
+  dm.VisualMASMOptions.SaveFile;
 end;
 
 procedure TfrmSetup.btnCloseClick(Sender: TObject);
 begin
   SaveFileLocations;
+  AssociateFiles;
+  Close;
 end;
 
 procedure TfrmSetup.HttpWork(ASender: TObject; AWorkMode: TWorkMode; AWorkCount: Int64);
 begin
   with ASender as TIdHTTP do
   begin
-    sGauge1.Progress := AWorkCount;
+    ProgressBar1.Position := AWorkCount;
   end;
+end;
+
+procedure TfrmSetup.AssociateFiles;
+begin
+  if chkASM.Checked then
+    RegisterFileType(pftASM);
+  if chkINC.Checked then
+    RegisterFileType(pftINC);
+  if chkRC.Checked then
+    RegisterFileType(pftRC);
 end;
 
 end.

@@ -1,22 +1,27 @@
-VisualMASM
-==========
-Create 32-bit and 64-bit Microsoft Windows and 16-bit MS-DOS applications with Visual MASM for Microsoft Macro Assembler (MASM). This will be the source repository of the project site at http://www.visualmasm.com
+Visual MASM
+===========
+Create 16-bit, 32-bit and 64-bit Microsoft Windows and 16-bit MS-DOS applications with Visual MASM for Microsoft Macro Assembler (MASM). This is the source repository of the project site at http://www.visualmasm.com
 
-![visualmasm0](https://cloud.githubusercontent.com/assets/1396719/24023474/f579e5bc-0a82-11e7-8466-4b0b550e2a0d.png)
-![visualmasm0](https://cloud.githubusercontent.com/assets/1396719/24023490/07cabdc2-0a83-11e7-8c87-c83795279f0e.png)
-![visualmasm0](https://cloud.githubusercontent.com/assets/1396719/24279842/bbcbfe5e-1022-11e7-86b5-06e2086d0658.png)
+![alt text](https://github.com/ThomasJaeger/VisualMASM/blob/master/Images/main.png?raw=true)
+![alt text](https://github.com/ThomasJaeger/VisualMASM/blob/master/Images/main2.png?raw=true)
+![alt text](https://github.com/ThomasJaeger/VisualMASM/blob/master/Images/main3.png?raw=true)
 
-Update - 04-20-2017
+Update - 12-30-2017
 -------------------
-- Added Include (INC) file type support
-- Fixed synchronizations of dialog and rc files when multiple dialogs are created
-- Several other bug fixes
+- Added post link event command line execution after link is completed (set in project link option)
+- Fixed assembling DOS programs in debug mode
 
 To try out the latest build
 ---------------------------
 To try out the latest build, copy all files and sub-folders from this folder:
 https://github.com/ThomasJaeger/VisualMASM/tree/master/Win32/Debug
 and run VisualMASM.exe
+
+Run VisualMASMSetup.exe
+-----------------------
+Instead of copying the files above, you can simply download and run the new setup program
+for Visual MASM. You can download it here:
+https://github.com/ThomasJaeger/VisualMASM/raw/master/Setup/VisualMASMSetup.exe
 
 Video 3 - Form Designer
 
@@ -34,10 +39,20 @@ Requirements
 ------------
 The installation program of VisualMASM will allow you to download MASM32 or the Microsoft Platform SDK so that you can start writing assembly programs right away.
 
+Donate
+------
+Help support Visual MASM with your financial donation at http://paypal.me/thomasheinzjaeger
+This will help me with paying for some or all of the expenses to keep Visual MASM going.
+Thank you for your help!
+
 Compiling Source
 ----------------
 To compile the source you will need the follwing:
 - Delphi XE4
-- AlphaSkins (commercial)
-- EControl form designer (commercial)
-- SynEdit (https://github.com/ThomasJaeger/SynEdit)
+- SynEdit (https://github.com/ThomasJaeger/SynEdit-1, forked from TurboPack)
+- HtmlViewer (https://github.com/BerndGabriel/HtmlViewer)
+- Json Data Objects (https://github.com/ahausladen/JsonDataObjects)
+- VCL Styles Utils (https://github.com/RRUZ/vcl-styles-utils)
+- LMD IDE-Tools (commercial
+- KControls (https://github.com/ThomasJaeger/KControls)
+- Virtual Treeview (https://github.com/Virtual-TreeView/Virtual-TreeView/)

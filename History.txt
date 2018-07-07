@@ -1,3 +1,296 @@
+Update - 12-30-2017
+-------------------
+- Added post link event command line execution after link is completed (set in project link option)
+- Fixed assembling DOS programs in debug mode
+
+Update - 10-03-2017
+-------------------
+- Fixed dialog controls Y dialog unit (DLU) calculations
+- Added manifest and resource script files for Win32 and Win64 projects to give common controls look and feel.
+  You can still manually delete the manifest.xml and resource.rc files if you want to reduce the file size
+  and preserve the old style look.
+- Enforcing export functions before assembling DLLs
+- Fixed file content if file is not open in editor
+
+Update - 10-01-2017
+-------------------
+- Added new Manifest.xml file type to Win32 and Win64 projects. This enables common control look and feel of the
+  current Windows theme. To add a manifest manually, go to project options and add a new file Other...
+  The manifest will be included during the resource script compilation if it is present in the project.
+
+Update - 09-30-2017
+-------------------
+- Minor visual improvements
+- Improved visual form designer to correctly calculate dialog units from pixels when producing .RC
+  (resource script) files. Now forms and controls are correctly layed out.
+
+Update - 09-18-2017
+-------------------
+- Updated 32-bit Windows Dialog Project with visual designer
+
+Update - 09-15-2017
+-------------------
+- Fixed assembler error process detection and subsequent syntax highlighting in editor
+- Updated errors panel to use black forecolor highlighting
+
+Update - 09-14-2017
+-------------------
+- Improved detection of precedures in assembly files
+- Fixed AV creating new group and exiting Visual MASM
+
+Update - 09-13-2017
+-------------------
+- Fixed 32-bit Windows DLL project linking process error: "LNK1181: cannot open input file"
+
+Update - 09-12-2017
+-------------------
+- Fixed detecting correct assembly source file by its internal id after creating new dialog projects. This caused
+  the assembly process to fail.
+- Added additional checks when assemblying source files
+
+Update - 09-11-2017
+-------------------
+- Fixed issue when creating dialog projects with assembly file being empty.
+
+Update - 09-10-2017
+-------------------
+- Added new Errors window (View -> Errors) to display assembly errors. Double-click to jump to line in source file.
+
+Update - 09-09-2017
+-------------------
+- Fixed loading an assembly file from command line in Windows Explorer to enable all Visual MASM features
+- Enforcing 100% successful assemble file and assemble project results before continuing with link process
+
+Update - 09-08-2017
+-------------------
+- Fixed "Export Functions" pop-up menu not displaying when right clicking on inactive project is not a DLL
+- Adjusted hex editor colors based in bright or dark themes
+- Added more videos in menu Help -> Visual MASM Video Tutorials
+
+Update - 09-05-2017
+-------------------
+- Fixed build-order access violation exception
+
+Update - 09-04-2017
+-------------------
+- Added missing template file Win32HelloWorldDialog.asm to setup project
+- Fixed creating and assembling projects for first time but not saved, yet.
+- Added videos "Setup Visual MASM" and "Your first Hello World program" under menu
+  Help -> Visual MASM Video Tutorials
+- Cosmetic UI changes to improve overall readability
+
+Update - 09-02-2017
+-------------------
+- Added cleanup code when assembling, linking, and compiling (resources)
+- Added Increase (Ctrl+Shift+=) and Decreae (Ctrl+Shift+-) font size options in Edit main menu. You can also
+  increase or decrease the font size of the editor by using Ctrl+Mouse Wheel Up or Down.
+- Fixed 32-bit Windows Dialog Application project file creations
+- Cosmetic UI changes to improve overall readability
+
+Update - 08-31-2017
+-------------------
+- Fixed dlgproc procedure when first creating dialog project
+- Added MASM directives .8086, .8087, .186, .286, and .286P
+- Fixed Win32 API syntax highlighting in editor (was supposed to be yellow)
+- Added 16-bit Windows EXE support
+- Fixed gutter border color in editor
+
+Update - 08-28-2017
+-------------------
+- Adding module-definition files for 16-bit and 64-bit DLL projects
+- Fixed updating module-definition file after exporting functions
+
+Update - 08-27-2017
+-------------------
+- Added support for 16-bit, 32-bit, and 64-bit DLL Projects.
+- Added new DLL project menu "Export Functions" to allow to manage exported functions for DLL projects.
+  To access the Export Functions window, right click on a DLL Project in the Project Manager and
+  select "Export Functions:.
+- Added new module definition type file to support DLL projects
+- Changed all default sizes in all windows to 10 points for easier reading
+
+Update - 08-21-2017
+-------------------
+- Fixed sort order and build selection for "Change Project Build Order..."
+
+Update - 08-20-2017
+-------------------
+- Added build order column in project manager
+- Added new "Change Project Build Order" to allow ordering the build process for a group. In the project
+  manager, right click the group and select "Change Project Build Order..."
+- Fixed project file type extension detection for .DLG files when saving dialog file
+
+Update - 08-13-2017
+-------------------
+- Fixed F9 (Run Release) short-cut, was not detecting active project
+
+Update - 08-12-2017
+-------------------
+- Added new project type Library. Go to File -> New -> Other and select Assembly Projects and then Library or
+  right click on the Project Group in the project manager and select Add new project... and then Library. You
+  can add assembly files, .obj, and .lib files to manage your libraries.
+
+Update - 08-10-2017
+-------------------
+- Fixed "Go to line number" dialog to operate properly (Search -> Go to line number)
+
+Update - 08-09-2017
+-------------------
+- Windows Explorer integration to allow double clicking .asm, .inc, .rc files and open them in Visual MASM
+- Project options now allows file extensions to be associated with Visual MASM (.asm, .inc, .rc)
+- Setup wizard now allows file extensions to be associated with Visual MASM (.asm, .inc, .rc)
+- Added hex editor for binary files (Undo and Save works, not all commands work, yet)
+- Allow opening any file including binary files (.exe, .dll, .obj, etc.) in File -> Open menu
+
+Update - 08-05-2017
+-------------------
+- Updated 64-bit assembly template
+- Fixed 64-bit debug linking
+- Fixed "build project" to check if project was saved for the first time after project was created
+- When adding an existing .INC file, fixed file type detection
+- Updated .asm and .inc file icons
+
+Update - 08-03-2017
+-------------------
+- Fixed "DOS Prompt Here" when file is on different drive
+- Improved file type dynamic menu option detection in Project Manager (right click on file)
+- Fixed "Open" in Project Manager's file pop-up menu
+- All .RC resource files to be compiled individually from Project Explorer
+- Adjusted .BAT file color syntax highlighting according to what theme is active
+
+Update - 08-02-2017
+-------------------
+- Adjusted .BAT file color syntax highlighting according to what theme is active
+
+Update - 08-01-2017
+-------------------
+- Fixed access violation error when removing project and focusing on code editor
+
+Update - 07-31-2017
+-------------------
+- Saving file locations after setup wizard is closed
+- Fixed access violation error when switching themes and focusing on code editor
+
+Update - 07-30-2017
+-------------------
+- Fixed Run -> Run (Release) and Run -> (Debug) menu option (was not enabled)
+- Fixed access violation error when dialog was created and visible
+- Fixed MS-DOS 16-bit assembling and linking
+
+Update - 07-22-2017
+-------------------
+- Preperation for Win32 EXE Dialog Applications
+- Added new application type Win32 EXE Dialog Application
+- Toggle last used tabs via Ctrl+Tab
+- Now updating "Size in Bytes" column in project explorer when link was successful
+- Updated project output folder when renaming a project
+- Updated project output folder when saving a project into a different folder via "Save Project As..."
+
+Update - 07-20-2017
+-------------------
+- Fixed Save As... for Files, Projects, Groups
+- Fixed not being able to assemble files when adding files to a project via Add...
+
+Update - 07-19-2017
+-------------------
+- Fixed long path folders with spaces when assembling and linking
+- Fixed file size calculations with files in long path folders
+
+Update - 07-18-2017
+-------------------
+- Added new external debugger option in Tools -> Options -> Debug to external debugger
+- Fixed assembling and building all projects from Group in Project Explorer
+- Added main menu Project -> Add new... based on what project is currently active
+- Added /Zd /Zf options when assembling
+
+Update - 07-16-2017
+-------------------
+- Fixed saving files for first time with common project folder directory enforcement
+- Fixed saving group for first time with common project folder directory enforcement
+- Updated About
+- Added main menu toolbar buttons save and save all
+- Adjusted colors based on theme for .RC (resource script) files
+- Updated resource designer's images
+
+Update - 07-14-2017
+-------------------
+- More prep-work for user-mode debugger
+- Added Debug and Release Run options for each project
+- Added project output folder in Project -> Options -> General
+- Added common projects folder in Tools -> Options -> General
+- Fixed getting correct folder when prompting for folders
+- Added library path option for Project Options
+
+Update - 07-12-2017
+-------------------
+- Prep work for upcoming Visual MASM user-mode debugger
+- Removed AlphaSkins and replaced with Delphi's built-in VCL Style skinning
+- Replaced older TSynEdit with TurboPack SynEdit, added MASM Assembly support
+- Implemented full docking panel support with drag & drop of panels and tool windows (similar to Visual Studio)
+- Fixed loading group when documents are still open
+- Fixed status bar when multiple projects are open
+- Fixed closing dialog file should also close .asm and .rc files
+- Added IDE layout saving and loading capability
+- Added loading of Skins from main IDE window
+- Added Windows Controls panel (when designing Windows Dialogs)
+- Added Object Tree panel (when designing Windows Dialogs)
+- Added toolbar for main IDE window
+
+Update - 06-20-2017
+-------------------
+- Implemented full docking panel support with drag & drop of panels and tool windows (similar to Visual Studio)
+- Fixed loading group when documents are still open
+
+Update - 06-03-2017
+-------------------
+- Added paramter tooltip for WinAPI functions, while cursor is over API function, press Ctrl+Shift+Space to display
+- Fixed code completion (Ctrl + Space) for EQU, WINAPI, and INCLUDE calls in editor
+
+Update - 05-25-2017
+-------------------
+- Added VisualMASMSetup.exe with generic installer
+
+Update - 05-22-2017
+-------------------
+- Added output window font options in Tools -> Options -> General
+- When making a project an active project, highlighting and focusing first project file
+- Added 64-bit assembler file location check before assembling 64-bit files
+
+Update - 05-21-2017
+-------------------
+- Added new project type Windows 32-bit Console Application
+
+Update - 05-13-2017
+-------------------
+- Added context help font name and font size and visibility options (Tools -> Options)
+- Added initial context help (in editor, hover with mouse curser over key words to display help)
+
+Update - 05-03-2017
+-------------------
+- Added Ctrl + Mouse wheel up / down to increase or decrease editor font size
+- Added toggle short-cut F12 to toggle between dialog view and assembly source
+
+Update - 05-02-2017
+-------------------
+- Added assembly procedure generation in code behind assembly file for dialogs in resource designer (OnClick e.g.)
+
+Update - 04-29-2017
+-------------------
+- Fixed empty dialog name during creation
+- Added code behind assembly file for dialogs in resource designer
+- Added MS Windows SDK Include path in Options (needed for compiling resources and finding header files)
+- Added all controls to resource script files parser (still missing control specific styles)
+
+Update - 04-22-2017
+-------------------
+- Fixed removal of project from group and debugger support plugin
+- Added first example project by Iczelion - Tutorial 10: Dialog Box as Main Window
+- Changed default Visual MASM Modified property of a file to false
+- Fixed access violation when deleting newly added file from debugger support plugin
+- Fixed Project Explorer current project tracking when adding new files
+- Added verbose switch when compiling resources
+- Added resource script (.RC) compiler and linker support
+
 Update - 04-20-2017
 -------------------
 - Added Include (INC) file type support

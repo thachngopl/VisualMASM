@@ -1,0 +1,23 @@
+{
+	"Version": 2,
+	"Group": {
+		"Name": "SimpleDialog",
+		"Id": "DFEAE050-C1A7-4F3C-999C-CD385F1E2CFB",
+		"Created": "9/15/2017 2:44:32 PM",
+		"FileName": "C:\\Users\\Thomas\\Documents\\GitHub\\VisualMASM\\Examples\\Windows\\Examples\\SimpleDialog\\SimpleDialog.vmg",
+		"SelectedProjectId": "EFF2744C-5FE4-4550-8642-1928D832FE64",
+		"LastFileOpenId": "E0F072EA-E175-4951-A35E-59F8F680B106",
+		"Projects": [
+			{
+				"Id": "EFF2744C-5FE4-4550-8642-1928D832FE64",
+				"Name": "Win32AppDlg.exe",
+				"FileName": "C:\\Assembly Demos\\Win32AppDlg\\Win32AppDlg.vmp"
+			}
+		],
+		"BuildOrder": [
+			{
+				"Id": "EFF2744C-5FE4-4550-8642-1928D832FE64"
+			}
+		]
+	}
+}

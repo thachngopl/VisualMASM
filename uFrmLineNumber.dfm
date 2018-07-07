@@ -1,76 +1,58 @@
 object frmGoToLineNumber: TfrmGoToLineNumber
   Left = 770
   Top = 306
-  Width = 284
-  Height = 126
   BorderIcons = [biSystemMenu]
   Caption = 'Go to Line Number'
+  ClientHeight = 98
+  ClientWidth = 268
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -13
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
-  object sLabel1: TsLabel
+  TextHeight = 16
+  object Label1: TLabel
     Left = 16
-    Top = 24
-    Width = 108
-    Height = 21
-    AutoSize = False
+    Top = 28
+    Width = 133
+    Height = 16
     Caption = 'Enter new line number:'
-    Layout = tlCenter
   end
-  object spnLine: TsSpinEdit
-    Left = 136
-    Top = 24
-    Width = 113
-    Height = 21
-    Color = 1710618
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = 10329501
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 0
-    Text = '1'
-    SkinData.SkinSection = 'EDIT'
-    BoundLabel.Indent = 0
-    BoundLabel.Font.Charset = DEFAULT_CHARSET
-    BoundLabel.Font.Color = clWindowText
-    BoundLabel.Font.Height = -11
-    BoundLabel.Font.Name = 'MS Sans Serif'
-    BoundLabel.Font.Style = []
-    BoundLabel.Layout = sclLeft
-    BoundLabel.MaxWidth = 0
-    BoundLabel.UseSkinColor = True
+  object spnLine: TSpinEdit
+    Left = 155
+    Top = 25
+    Width = 71
+    Height = 26
     MaxValue = 99999
     MinValue = 1
+    TabOrder = 0
     Value = 1
   end
-  object sButton1: TsButton
-    Left = 192
-    Top = 64
+  object btnOk: TButton
+    Left = 185
+    Top = 65
     Width = 75
     Height = 25
     Caption = 'Ok'
     Default = True
     ModalResult = 1
     TabOrder = 1
-    SkinData.SkinSection = 'BUTTON'
   end
-  object sButton2: TsButton
+  object btnCancel: TButton
     Left = 104
-    Top = 64
+    Top = 65
     Width = 75
     Height = 25
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 2
-    SkinData.SkinSection = 'BUTTON'
   end
 end

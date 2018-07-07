@@ -3,7 +3,7 @@ unit uTFile;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, uSharedGlobals, Vcl.Dialogs;
 
 type
   TFile = class
@@ -50,6 +50,8 @@ begin
   fileText.SaveToFile(path);
   result := fileText.Text;
   FreeAndNil(fileText);
+  if not FileExistsStripped(Path) then
+    ShowMessage('Unable to save file ' + Path);
 end;
 (*
 class function TFile.DoReadAllText(const Path: string): string;
@@ -81,7 +83,7 @@ end;
 
 class function TFile.Exists(const path: string): boolean;
 begin
-  result := FileExists(path);
+  result := FileExistsStripped(path);
 end;
 
 class function TFile.Delete(const path: string): boolean;

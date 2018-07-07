@@ -3,951 +3,825 @@ object frmOptions: TfrmOptions
   Top = 218
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Options'
-  ClientHeight = 511
-  ClientWidth = 787
+  ClientHeight = 736
+  ClientWidth = 880
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
   Position = poOwnerFormCenter
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
-  object pagOptions: TsPageControl
-    Left = 168
-    Top = 0
-    Width = 619
-    Height = 471
-    ActivePage = tabThemes
-    Align = alClient
-    TabOrder = 0
-    SkinData.SkinSection = 'PAGECONTROL'
-    object tabGeneral: TsTabSheet
-      Caption = 'General'
-      TabVisible = False
-      object chkOpenLastUsedProject: TsCheckBox
-        Left = 16
-        Top = 16
-        Width = 221
-        Height = 18
-        Caption = 'Open last used project when starting up'
-        TabOrder = 0
-        SkinData.SkinSection = 'CHECKBOX'
-        ImgChecked = 0
-        ImgUnchecked = 0
-      end
-      object chkDoNotShowToolTips: TsCheckBox
-        Left = 16
-        Top = 40
-        Width = 129
-        Height = 18
-        Caption = 'Do not show tool tips'
-        TabOrder = 1
-        SkinData.SkinSection = 'CHECKBOX'
-        ImgChecked = 0
-        ImgUnchecked = 0
-      end
-    end
-    object tabFileLocations: TsTabSheet
-      Caption = 'File Locations'
-      TabVisible = False
-      object grp32Bit: TsGroupBox
-        Left = 16
-        Top = 8
-        Width = 585
-        Height = 129
-        Caption = '32-Bit'
-        TabOrder = 0
-        CaptionMargin.Left = 10
-        CaptionMargin.Top = 1
-        CaptionMargin.Right = 10
-        CaptionMargin.Bottom = 2
-        SkinData.SkinSection = 'GROUPBOX'
-        CaptionSkin = 'MAINMENU'
-        object sLabel10: TsLabel
-          Left = 16
-          Top = 29
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'ML.EXE'
-          WordWrap = True
-        end
-        object sLabel11: TsLabel
-          Left = 16
-          Top = 53
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'LINK.EXE'
-          WordWrap = True
-        end
-        object sLabel12: TsLabel
-          Left = 16
-          Top = 77
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'RC.EXE'
-          WordWrap = True
-        end
-        object sLabel21: TsLabel
-          Left = 16
-          Top = 101
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'LIB.EXE'
-          WordWrap = True
-        end
-        object txtML32: TsComboEdit
-          Left = 88
-          Top = 25
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 0
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtML32ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtLink32: TsComboEdit
-          Left = 88
-          Top = 49
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 1
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtLink32ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtRC32: TsComboEdit
-          Left = 88
-          Top = 73
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 2
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtRC32ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtLIB32: TsComboEdit
-          Left = 88
-          Top = 97
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 3
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtLIB32ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-      end
-      object grp64Bit: TsGroupBox
-        Left = 16
-        Top = 144
-        Width = 585
-        Height = 129
-        Caption = '64-Bit'
-        TabOrder = 1
-        CaptionMargin.Left = 10
-        CaptionMargin.Top = 1
-        CaptionMargin.Right = 10
-        CaptionMargin.Bottom = 2
-        SkinData.SkinSection = 'GROUPBOX'
-        CaptionSkin = 'MAINMENU'
-        object sLabel13: TsLabel
-          Left = 16
-          Top = 29
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'ML64.EXE'
-          WordWrap = True
-        end
-        object sLabel14: TsLabel
-          Left = 16
-          Top = 53
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'LINK.EXE'
-          WordWrap = True
-        end
-        object sLabel15: TsLabel
-          Left = 16
-          Top = 77
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'RC.EXE'
-          WordWrap = True
-        end
-        object sLabel20: TsLabel
-          Left = 16
-          Top = 101
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'LIB.EXE'
-          WordWrap = True
-        end
-        object txtML64: TsComboEdit
-          Left = 88
-          Top = 25
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 0
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtML64ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtLink64: TsComboEdit
-          Left = 88
-          Top = 49
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 1
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtLink64ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtRC64: TsComboEdit
-          Left = 88
-          Top = 73
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 2
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtRC64ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtLIB64: TsComboEdit
-          Left = 88
-          Top = 97
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 3
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtLIB64ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-      end
-      object grp16Bit: TsGroupBox
-        Left = 16
-        Top = 280
-        Width = 585
-        Height = 129
-        Caption = '16-Bit'
-        TabOrder = 2
-        CaptionMargin.Left = 10
-        CaptionMargin.Top = 1
-        CaptionMargin.Right = 10
-        CaptionMargin.Bottom = 2
-        SkinData.SkinSection = 'GROUPBOX'
-        CaptionSkin = 'MAINMENU'
-        object sLabel9: TsLabel
-          Left = 16
-          Top = 29
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'ML16.EXE'
-          WordWrap = True
-        end
-        object sLabel16: TsLabel
-          Left = 16
-          Top = 53
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'LINK.EXE'
-          WordWrap = True
-        end
-        object sLabel17: TsLabel
-          Left = 16
-          Top = 77
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'RC.EXE'
-          WordWrap = True
-        end
-        object sLabel19: TsLabel
-          Left = 16
-          Top = 101
-          Width = 65
-          Height = 13
-          AutoSize = False
-          Caption = 'LIB.EXE'
-          WordWrap = True
-        end
-        object txtML16: TsComboEdit
-          Left = 88
-          Top = 25
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 0
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtML16ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtLink16: TsComboEdit
-          Left = 88
-          Top = 49
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 1
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtLink16ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtRC16: TsComboEdit
-          Left = 88
-          Top = 73
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 2
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtRC16ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-        object txtLIB16: TsComboEdit
-          Left = 88
-          Top = 97
-          Width = 481
-          Height = 21
-          AutoSize = False
-          Color = 1710618
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 14013909
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 3
-          Text = ''
-          CheckOnExit = True
-          BoundLabel.Font.Charset = DEFAULT_CHARSET
-          BoundLabel.Font.Color = clWindowText
-          BoundLabel.Font.Height = -11
-          BoundLabel.Font.Name = 'MS Sans Serif'
-          BoundLabel.Font.Style = []
-          SkinData.SkinSection = 'EDIT'
-          OnButtonClick = txtLIB16ButtonClick
-          GlyphMode.Blend = 0
-          GlyphMode.Grayed = False
-        end
-      end
-      object btnRunSetupWizard: TsButton
-        Left = 16
-        Top = 424
-        Width = 177
-        Height = 25
-        Caption = 'Run Setup Wizard...'
-        TabOrder = 3
-        OnClick = btnRunSetupWizardClick
-        SkinData.SkinSection = 'BUTTON'
-      end
-    end
-    object tabThemes: TsTabSheet
-      Caption = 'Themes'
-      TabVisible = False
-      object sLabel2: TsLabel
-        Left = 360
-        Top = 11
-        Width = 60
-        Height = 13
-        Caption = 'Code Editor:'
-      end
-      object sLabel1: TsLabel
-        Left = 344
-        Top = 80
-        Width = 29
-        Height = 13
-        Alignment = taRightJustify
-        Caption = 'Scale:'
-        ParentFont = False
-        Visible = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 4013373
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-      end
-      object sLabel3: TsLabel
-        Left = 385
-        Top = 110
-        Width = 18
-        Height = 13
-        Caption = '100'
-        ParentFont = False
-        Visible = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 4013373
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-      end
-      object sLabel4: TsLabel
-        Left = 469
-        Top = 111
-        Width = 18
-        Height = 13
-        Caption = '125'
-        ParentFont = False
-        Visible = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 4013373
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-      end
-      object sLabel5: TsLabel
-        Left = 551
-        Top = 111
-        Width = 18
-        Height = 13
-        Caption = '150'
-        ParentFont = False
-        Visible = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 4013373
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-      end
-      object btnResetToDefaultTheme: TsButton
-        Left = 25
-        Top = 315
-        Width = 281
-        Height = 25
-        Caption = 'Reset to Default (TV-b)'
-        TabOrder = 0
-        OnClick = btnResetToDefaultThemeClick
-        SkinData.SkinSection = 'BUTTON'
-      end
-      object cmbCodeEditor: TsComboBox
-        Left = 360
-        Top = 32
-        Width = 169
-        Height = 21
-        Alignment = taLeftJustify
-        BoundLabel.Font.Charset = DEFAULT_CHARSET
-        BoundLabel.Font.Color = clWindowText
-        BoundLabel.Font.Height = -11
-        BoundLabel.Font.Name = 'MS Sans Serif'
-        BoundLabel.Font.Style = []
-        SkinData.SkinSection = 'COMBOBOX'
-        VerticalAlignment = taAlignTop
-        Style = csDropDownList
-        Color = 1710618
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 14013909
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ItemIndex = -1
-        ParentFont = False
-        TabOrder = 1
-        OnChange = cmbCodeEditorChange
-      end
-      object btnSelectSkin: TsButton
-        Left = 25
-        Top = 30
-        Width = 281
-        Height = 25
-        Caption = 'Select Skin...'
-        TabOrder = 2
-        OnClick = btnSelectSkinClick
-      end
-      object sTrackBar4: TsTrackBar
-        Left = 379
-        Top = 76
-        Width = 192
-        Height = 29
-        Max = 2
-        PageSize = 1
-        TabOrder = 3
-        Visible = False
-        BarOffsetV = 0
-        BarOffsetH = 0
-      end
-      object sGroupBox1: TsGroupBox
-        Left = 25
-        Top = 96
-        Width = 281
-        Height = 213
-        Caption = ' Skin colorization '
-        TabOrder = 4
-        CaptionLayout = clTopCenter
-        SkinData.SkinSection = 'PANEL_LOW'
-        SkinData.OuterEffects.Visibility = ovAlways
-        CaptionSkin = 'PROGRESSH'
-        CaptionWidth = 100
-        CaptionYOffset = 6
-        object sLabel6: TsLabel
-          Left = 234
-          Top = 98
-          Width = 6
-          Height = 13
-          Caption = '0'
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 4013373
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel7: TsLabel
-          Left = 234
-          Top = 38
-          Width = 6
-          Height = 13
-          Caption = '0'
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 4013373
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel8: TsLabel
-          Left = 234
-          Top = 154
-          Width = 6
-          Height = 13
-          Caption = '0'
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 4013373
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel18: TsLabel
-          Left = 51
-          Top = 63
-          Width = 6
-          Height = 13
-          Caption = '0'
-          Enabled = False
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 1579032
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel22: TsLabel
-          Left = 214
-          Top = 63
-          Width = 18
-          Height = 13
-          Caption = '360'
-          Enabled = False
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 1579032
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel23: TsLabel
-          Left = 42
-          Top = 119
-          Width = 22
-          Height = 13
-          Caption = '-100'
-          Enabled = False
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 1579032
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel24: TsLabel
-          Left = 214
-          Top = 119
-          Width = 18
-          Height = 13
-          Caption = '100'
-          Enabled = False
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 1579032
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel25: TsLabel
-          Left = 112
-          Top = 63
-          Width = 54
-          Height = 13
-          Caption = 'HUE Offset'
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 4013373
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel26: TsLabel
-          Left = 113
-          Top = 119
-          Width = 50
-          Height = 13
-          Caption = 'Saturation'
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 4013373
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel27: TsLabel
-          Left = 44
-          Top = 175
-          Width = 16
-          Height = 13
-          Alignment = taCenter
-          Caption = '-50'
-          Enabled = False
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 1579032
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel28: TsLabel
-          Left = 214
-          Top = 175
-          Width = 12
-          Height = 13
-          Alignment = taCenter
-          Caption = '50'
-          Enabled = False
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 1579032
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sLabel29: TsLabel
-          Left = 112
-          Top = 175
-          Width = 50
-          Height = 13
-          Caption = 'Brightness'
-          ParentFont = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 4013373
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-        end
-        object sTrackBar2: TsTrackBar
-          Tag = 5
-          Left = 40
-          Top = 93
-          Width = 193
-          Height = 24
-          Max = 100
-          Min = -100
-          PageSize = 24
-          Frequency = 20
-          TabOrder = 1
-          TickStyle = tsNone
-          OnChange = sTrackBar2Change
-          SkinData.SkinSection = 'TRACKBAR'
-          ShowProgress = True
-          BarOffsetV = 0
-          BarOffsetH = 0
-          ShowProgressFrom = -100
-        end
-        object sTrackBar1: TsTrackBar
-          Tag = 5
-          Left = 40
-          Top = 33
-          Width = 193
-          Height = 28
-          Max = 360
-          PageSize = 24
-          Frequency = 36
-          TabOrder = 0
-          TickStyle = tsNone
-          OnChange = sTrackBar1Change
-          SkinData.SkinSection = 'TRACKBAR'
-          ShowProgress = True
-          OnSkinPaint = sTrackBar1SkinPaint
-          BarOffsetV = 0
-          BarOffsetH = 0
-        end
-        object sTrackBar3: TsTrackBar
-          Tag = 5
-          Left = 40
-          Top = 149
-          Width = 193
-          Height = 24
-          Max = 100
-          Min = -100
-          PageSize = 24
-          Frequency = 20
-          TabOrder = 2
-          TickStyle = tsNone
-          OnChange = sTrackBar3Change
-          SkinData.SkinSection = 'TRACKBAR'
-          ShowProgress = True
-          BarOffsetV = 0
-          BarOffsetH = 0
-          ShowProgressFrom = -100
-        end
-      end
-    end
-  end
-  object sPanel1: TsPanel
+  TextHeight = 16
+  object Panel1: TPanel
     Left = 0
-    Top = 471
-    Width = 787
-    Height = 40
+    Top = 691
+    Width = 880
+    Height = 45
     Align = alBottom
     BevelOuter = bvNone
-    TabOrder = 1
-    SkinData.SkinSection = 'TRANSPARENT'
+    TabOrder = 0
     DesignSize = (
-      787
-      40)
-    object btnCancel: TsButton
-      Left = 621
-      Top = 8
+      880
+      45)
+    object btnCancel: TButton
+      Left = 700
+      Top = 10
       Width = 75
       Height = 25
-      Anchors = [akRight, akBottom]
+      Anchors = [akRight]
       Cancel = True
       Caption = 'Cancel'
-      ModalResult = 2
       TabOrder = 0
-      SkinData.SkinSection = 'BUTTON'
+      OnClick = btnCancelClick
     end
-    object btnOk: TsButton
-      Left = 712
-      Top = 8
+    object btnOk: TButton
+      Left = 781
+      Top = 10
       Width = 75
       Height = 25
-      Anchors = [akRight, akBottom]
+      Anchors = [akRight]
       Caption = 'Ok'
-      ModalResult = 1
+      Default = True
       TabOrder = 1
       OnClick = btnOkClick
-      SkinData.SkinSection = 'BUTTON'
     end
   end
-  object tvTree: TsTreeView
+  object tvTree: TTreeView
     Left = 0
     Top = 0
-    Width = 168
-    Height = 471
+    Width = 166
+    Height = 691
     Align = alLeft
-    Color = 1710618
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = 14013909
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
     HideSelection = False
     Indent = 19
-    ParentFont = False
-    ReadOnly = True
-    TabOrder = 2
+    RowSelect = True
+    TabOrder = 1
     OnChange = tvTreeChange
     Items.NodeData = {
-      03030000002C0000000000000000000000FFFFFFFFFFFFFFFF00000000000000
+      03050000002C0000000000000000000000FFFFFFFFFFFFFFFF00000000000000
       00000000000107470065006E006500720061006C003A00000000000000000000
       00FFFFFFFFFFFFFFFF000000000000000000000000010E460069006C00650020
       004C006F0063006100740069006F006E0073002A0000000000000000000000FF
       FFFFFFFFFFFFFF00000000000000000000000001065400680065006D00650073
-      00}
-    SkinData.SkinSection = 'EDIT'
+      00280000000000000000000000FFFFFFFFFFFFFFFF0000000000000000000000
+      000105440065006200750067003E0000000000000000000000FFFFFFFFFFFFFF
+      FF0000000000000000000000000110460069006C00650020004100730073006F
+      00630069006100740069006F006E00}
+  end
+  object pagOptions: TPageControl
+    Left = 166
+    Top = 0
+    Width = 714
+    Height = 691
+    ActivePage = tabDebug
+    Align = alClient
+    TabOrder = 2
+    object tabGeneral: TTabSheet
+      Caption = 'General'
+      TabVisible = False
+      DesignSize = (
+        706
+        681)
+      object chkOpenLastUsedProject: TCheckBox
+        Left = 24
+        Top = 64
+        Width = 265
+        Height = 17
+        Caption = 'Open last used project when starting up'
+        TabOrder = 0
+      end
+      object chkDoNotShowToolTips: TCheckBox
+        Left = 24
+        Top = 87
+        Width = 193
+        Height = 17
+        Caption = 'Do not show tool tips'
+        TabOrder = 1
+      end
+      object grpContextHelp2: TGroupBox
+        Left = 20
+        Top = 422
+        Width = 257
+        Height = 107
+        Caption = 'Context Help'
+        TabOrder = 2
+        object lblContextHelpFont: TLabel
+          Left = 16
+          Top = 28
+          Width = 72
+          Height = 16
+          Caption = 'Current Font'
+        end
+        object btnChangeContextHelpFont: TButton
+          Left = 16
+          Top = 63
+          Width = 129
+          Height = 25
+          Caption = 'Change Font...'
+          TabOrder = 0
+          OnClick = btnChangeContextHelpFontClick
+        end
+      end
+      object GroupBox1: TGroupBox
+        Left = 20
+        Top = 285
+        Width = 257
+        Height = 115
+        Caption = 'Output Window'
+        TabOrder = 3
+        object lblOutputFont: TLabel
+          Left = 16
+          Top = 36
+          Width = 72
+          Height = 16
+          Caption = 'Current Font'
+        end
+        object btnChangeOutputWindowFont: TButton
+          Left = 16
+          Top = 71
+          Width = 129
+          Height = 25
+          Caption = 'Change Font...'
+          TabOrder = 0
+          OnClick = btnChangeOutputWindowFontClick
+        end
+      end
+      object GroupBox6: TGroupBox
+        Left = 20
+        Top = 143
+        Width = 653
+        Height = 129
+        Anchors = [akLeft, akRight]
+        Caption = 'All Projects'
+        TabOrder = 4
+        DesignSize = (
+          653
+          129)
+        object Label16: TLabel
+          Left = 16
+          Top = 30
+          Width = 617
+          Height = 33
+          AutoSize = False
+          Caption = 
+            'Create new projects in this common projects folder. If you don'#39't' +
+            ' specify a common projects folder, Visual MASM will use the defa' +
+            'ult folder which is the folder where Visual MASM is running in.'
+          WordWrap = True
+        end
+        object btnCommonProjectFolder: TSpeedButton
+          Left = 595
+          Top = 88
+          Width = 23
+          Height = 22
+          Hint = 'Browse for folder'
+          Anchors = [akRight]
+          Caption = '...'
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btnCommonProjectFolderClick
+        end
+        object Label17: TLabel
+          Left = 16
+          Top = 69
+          Width = 146
+          Height = 16
+          Caption = 'Common Projects Folder:'
+        end
+        object btnResetCommonProjectFolder: TSpeedButton
+          Left = 624
+          Top = 88
+          Width = 17
+          Height = 22
+          Hint = 'Reset to default'
+          Anchors = [akRight]
+          Caption = '!'
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btnResetCommonProjectFolderClick
+        end
+        object txtCommonProjectFolder: TEdit
+          Left = 16
+          Top = 88
+          Width = 573
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 0
+        end
+      end
+      object btnRunSetupWizard: TButton
+        Left = 24
+        Top = 20
+        Width = 233
+        Height = 25
+        Caption = 'Run Setup Wizard...'
+        TabOrder = 5
+        OnClick = btnRunSetupWizardClick
+      end
+    end
+    object tabFileLocations: TTabSheet
+      Caption = 'File Locations'
+      ImageIndex = 1
+      TabVisible = False
+      object Label1: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 5
+        Width = 700
+        Height = 80
+        Margins.Top = 5
+        Margins.Bottom = 10
+        Align = alTop
+        Alignment = taCenter
+        Caption = 
+          'IMPORTANT'#13#10'Make sure you set the INCLUDE or other environment va' +
+          'riables so that the below applications '#13#10'can find any dependent ' +
+          'files.'#13#10'For example, make sure that you set the INCLUDE environm' +
+          'ent variable to point to the '#13#10'Microsoft SDK Include path so tha' +
+          't RC.EXE can find dependnet header files.'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        WordWrap = True
+        ExplicitWidth = 537
+      end
+      object GroupBox4: TGroupBox
+        AlignWithMargins = True
+        Left = 20
+        Top = 509
+        Width = 666
+        Height = 157
+        Margins.Left = 20
+        Margins.Top = 5
+        Margins.Right = 20
+        Margins.Bottom = 5
+        Align = alTop
+        Anchors = [akRight]
+        Caption = '16-bit'
+        TabOrder = 0
+        DesignSize = (
+          666
+          157)
+        object Label3: TLabel
+          Left = 16
+          Top = 25
+          Width = 56
+          Height = 16
+          Caption = 'ML16.EXE'
+        end
+        object SpeedButton2: TSpeedButton
+          Left = 630
+          Top = 24
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtML16ButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 16
+        end
+        object Label4: TLabel
+          Left = 16
+          Top = 57
+          Width = 51
+          Height = 16
+          Caption = 'LINK.EXE'
+        end
+        object SpeedButton3: TSpeedButton
+          Left = 630
+          Top = 56
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtLink16ButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 41
+        end
+        object Label5: TLabel
+          Left = 16
+          Top = 89
+          Width = 42
+          Height = 16
+          Caption = 'RC.EXE'
+        end
+        object SpeedButton4: TSpeedButton
+          Left = 630
+          Top = 88
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtRC16ButtonClick
+          ExplicitTop = 85
+        end
+        object Label6: TLabel
+          Left = 16
+          Top = 122
+          Width = 43
+          Height = 16
+          Caption = 'LIB.EXE'
+        end
+        object SpeedButton5: TSpeedButton
+          Left = 630
+          Top = 121
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtLIB16ButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 91
+        end
+        object txtML16: TEdit
+          Left = 97
+          Top = 22
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 0
+        end
+        object txtLink16: TEdit
+          Left = 97
+          Top = 54
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 1
+        end
+        object txtRC16: TEdit
+          Left = 97
+          Top = 86
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 2
+        end
+        object txtLIB16: TEdit
+          Left = 97
+          Top = 119
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 3
+        end
+      end
+      object GroupBox5: TGroupBox
+        AlignWithMargins = True
+        Left = 20
+        Top = 100
+        Width = 666
+        Height = 65
+        Margins.Left = 20
+        Margins.Top = 5
+        Margins.Right = 20
+        Margins.Bottom = 5
+        Align = alTop
+        Anchors = [akRight]
+        Caption = 'Microsoft SDK'
+        TabOrder = 1
+        DesignSize = (
+          666
+          65)
+        object Label2: TLabel
+          Left = 16
+          Top = 27
+          Width = 75
+          Height = 16
+          Caption = 'Include Path:'
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 630
+          Top = 26
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtSDKIncludePathButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 16
+        end
+        object txtSDKIncludePath: TEdit
+          Left = 97
+          Top = 24
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 0
+        end
+      end
+      object GroupBox2: TGroupBox
+        AlignWithMargins = True
+        Left = 20
+        Top = 342
+        Width = 666
+        Height = 157
+        Margins.Left = 20
+        Margins.Top = 5
+        Margins.Right = 20
+        Margins.Bottom = 5
+        Align = alTop
+        Anchors = [akRight]
+        Caption = '64-bit'
+        TabOrder = 2
+        DesignSize = (
+          666
+          157)
+        object Label7: TLabel
+          Left = 16
+          Top = 25
+          Width = 56
+          Height = 16
+          Caption = 'ML64.EXE'
+        end
+        object SpeedButton6: TSpeedButton
+          Left = 630
+          Top = 24
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtML64ButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 16
+        end
+        object Label8: TLabel
+          Left = 16
+          Top = 57
+          Width = 51
+          Height = 16
+          Caption = 'LINK.EXE'
+        end
+        object SpeedButton7: TSpeedButton
+          Left = 630
+          Top = 56
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtLink64ButtonClick
+        end
+        object Label9: TLabel
+          Left = 16
+          Top = 89
+          Width = 42
+          Height = 16
+          Caption = 'RC.EXE'
+        end
+        object SpeedButton8: TSpeedButton
+          Left = 630
+          Top = 88
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtRC64ButtonClick
+        end
+        object Label10: TLabel
+          Left = 16
+          Top = 122
+          Width = 43
+          Height = 16
+          Caption = 'LIB.EXE'
+        end
+        object SpeedButton9: TSpeedButton
+          Left = 630
+          Top = 121
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtLIB64ButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 91
+        end
+        object txtML64: TEdit
+          Left = 97
+          Top = 22
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 0
+        end
+        object txtLink64: TEdit
+          Left = 97
+          Top = 54
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 1
+        end
+        object txtRC64: TEdit
+          Left = 97
+          Top = 86
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 2
+        end
+        object txtLIB64: TEdit
+          Left = 97
+          Top = 119
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 3
+        end
+      end
+      object GroupBox3: TGroupBox
+        AlignWithMargins = True
+        Left = 20
+        Top = 175
+        Width = 666
+        Height = 157
+        Margins.Left = 20
+        Margins.Top = 5
+        Margins.Right = 20
+        Margins.Bottom = 5
+        Align = alTop
+        Anchors = [akRight]
+        Caption = '32-bit'
+        TabOrder = 3
+        DesignSize = (
+          666
+          157)
+        object Label11: TLabel
+          Left = 17
+          Top = 25
+          Width = 42
+          Height = 16
+          Caption = 'ML.EXE'
+        end
+        object SpeedButton10: TSpeedButton
+          Left = 630
+          Top = 24
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtML32ButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 16
+        end
+        object Label12: TLabel
+          Left = 16
+          Top = 57
+          Width = 51
+          Height = 16
+          Caption = 'LINK.EXE'
+        end
+        object SpeedButton11: TSpeedButton
+          Left = 630
+          Top = 56
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtLink32ButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 41
+        end
+        object Label13: TLabel
+          Left = 16
+          Top = 89
+          Width = 42
+          Height = 16
+          Caption = 'RC.EXE'
+        end
+        object SpeedButton12: TSpeedButton
+          Left = 630
+          Top = 88
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtRC32ButtonClick
+        end
+        object Label14: TLabel
+          Left = 16
+          Top = 122
+          Width = 43
+          Height = 16
+          Caption = 'LIB.EXE'
+        end
+        object SpeedButton13: TSpeedButton
+          Left = 630
+          Top = 121
+          Width = 23
+          Height = 22
+          Anchors = [akRight]
+          Caption = '...'
+          OnClick = txtLIB32ButtonClick
+          ExplicitLeft = 599
+          ExplicitTop = 91
+        end
+        object txtML32: TEdit
+          Left = 97
+          Top = 22
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 0
+        end
+        object txtLink32: TEdit
+          Left = 97
+          Top = 54
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 1
+        end
+        object txtRC32: TEdit
+          Left = 97
+          Top = 86
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 2
+        end
+        object txtLIB32: TEdit
+          Left = 97
+          Top = 119
+          Width = 527
+          Height = 24
+          Anchors = [akLeft, akRight]
+          TabOrder = 3
+        end
+      end
+    end
+    object tabThemes: TTabSheet
+      Caption = 'Themes'
+      ImageIndex = 2
+      TabVisible = False
+      object Label15: TLabel
+        Left = 16
+        Top = 9
+        Width = 66
+        Height = 16
+        Caption = 'Code Editor'
+      end
+      object cmbCodeEditor: TComboBox
+        Left = 16
+        Top = 28
+        Width = 185
+        Height = 24
+        DropDownCount = 30
+        TabOrder = 0
+        Text = 'cmbCodeEditor'
+        OnChange = cmbCodeEditorChange
+      end
+    end
+    object tabDebug: TTabSheet
+      Caption = 'Debug'
+      ImageIndex = 3
+      TabVisible = False
+      object lblDebuggerPath: TLabel
+        Left = 48
+        Top = 128
+        Width = 60
+        Height = 16
+        Caption = 'Debugger:'
+        Visible = False
+      end
+      object btnBrowseDebugger: TSpeedButton
+        Left = 627
+        Top = 127
+        Width = 23
+        Height = 22
+        Caption = '...'
+        Visible = False
+        OnClick = btnBrowseDebuggerClick
+      end
+      object lblDebuggerDescription: TLabel
+        Left = 114
+        Top = 155
+        Width = 495
+        Height = 112
+        Caption = 
+          'To debug the linker output, use the $OutputFile meta command to ' +
+          'pass the file to the debugger. For example: "C:\Program Files\De' +
+          'bugging Tools for Windows (x64)\windbg.exe" $OutputFile'#13#10#13#10'If yo' +
+          'u wish to add any additional debugger options, pass them along o' +
+          'n the command line above.'#13#10
+        Visible = False
+        WordWrap = True
+      end
+      object radUseExternalDebugger: TRadioButton
+        Left = 32
+        Top = 88
+        Width = 257
+        Height = 17
+        Caption = 'Use External Debugger'
+        TabOrder = 0
+        OnClick = radUseExternalDebuggerClick
+      end
+      object radVisualMASMDebugger: TRadioButton
+        Left = 32
+        Top = 56
+        Width = 305
+        Height = 17
+        Caption = 'Use Visual MASM Debugger (not ready, yet)'
+        Enabled = False
+        TabOrder = 1
+        OnClick = radVisualMASMDebuggerClick
+      end
+      object txtDebugger: TEdit
+        Left = 114
+        Top = 125
+        Width = 507
+        Height = 24
+        TabOrder = 2
+        Visible = False
+      end
+      object radDoNottStartDebugger: TRadioButton
+        Left = 32
+        Top = 24
+        Width = 321
+        Height = 17
+        Caption = 'Do not start the debugger when assembling in debug mode'
+        Checked = True
+        TabOrder = 3
+        TabStop = True
+        OnClick = radDoNottStartDebuggerClick
+      end
+    end
+    object tabFileAssociation: TTabSheet
+      Caption = 'tabFileAssociation'
+      ImageIndex = 4
+      TabVisible = False
+      object Label18: TLabel
+        Left = 16
+        Top = 19
+        Width = 604
+        Height = 32
+        Caption = 
+          'Associate the following file types with Visual MASM. This will a' +
+          'llow you to open files in Windows Explorer with Visual MASM.'
+        WordWrap = True
+      end
+      object GroupBox7: TGroupBox
+        Left = 16
+        Top = 64
+        Width = 217
+        Height = 121
+        Caption = 'File Extensions'
+        TabOrder = 0
+        object chkASM: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 177
+          Height = 17
+          Caption = '.ASM (assembly source files)'
+          Checked = True
+          State = cbChecked
+          TabOrder = 0
+        end
+        object chkINC: TCheckBox
+          Left = 16
+          Top = 55
+          Width = 177
+          Height = 17
+          Caption = '.INC (include files)'
+          Checked = True
+          State = cbChecked
+          TabOrder = 1
+        end
+        object chkRC: TCheckBox
+          Left = 16
+          Top = 78
+          Width = 177
+          Height = 17
+          Caption = '.RC (resource script files)'
+          Checked = True
+          State = cbChecked
+          TabOrder = 2
+        end
+      end
+      object btnAssociateFileTypes: TButton
+        Left = 16
+        Top = 216
+        Width = 217
+        Height = 25
+        Caption = 'Associate file types now'
+        TabOrder = 1
+        OnClick = btnAssociateFileTypesClick
+      end
+    end
+  end
+  object dlgFont: TFontDialog
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Left = 40
+    Top = 88
   end
 end

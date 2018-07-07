@@ -11,6 +11,8 @@ type
   TGroup = class(TVisualMASMFile)
     private
       FProjects: TDictionary<string,TPRoject>;
+      FBuildOrder: TList<string>;
+      FDisplayOrder: TList<string>;
       FActiveProject: TProject;
       FLastFileOpenId: string;
       procedure Initialize;
@@ -28,12 +30,17 @@ type
       procedure DeleteProject(id: string);
       property LastFileOpenId: string read FLastFileOpenId write FLastFileOpenId;
       property Projects: TDictionary<string,TPRoject> read FProjects;
+      property BuildOrder: TList<string> read FBuildOrder write FBuildOrder;
+      property DisplayOrder: TList<string> read FDisplayOrder write FDisplayOrder;
     published
       procedure AddProject(project: TProject);
-      procedure CreateNewProject(projectType: TProjectType; options: TVisualMASMOptions);
+      function CreateNewProject(projectType: TProjectType; options: TVisualMASMOptions): TProject;
       function GetProjectFileByIntId(intId: integer): TProjectFile;
       function GetProjectFileById(id: string): TProjectFile;
       function GetProjectByFileIntId(intId: integer): TProject;
+      function GetProjectByIntId(intId: integer): TProject;
+      function GetProjectByFileId(id: string): TProject;
+      function GetBuildOrderForProject(id: string): integer;
   end;
 
 implementation
@@ -41,6 +48,8 @@ implementation
 procedure TGroup.Initialize;
 begin
   FProjects := TDictionary<string,TPRoject>.Create;
+  FBuildOrder := TList<string>.Create;
+  FDisplayOrder := TList<string>.Create;
 end;
 
 constructor TGroup.Create;
@@ -79,14 +88,21 @@ begin
   if project = nil then exit;
   if FProjects.ContainsKey(project.Id) then
     SetProjectById(project.Id, project)
-  else
+  else begin
     FProjects.Add(project.Id, project);
+    FBuildOrder.Add(project.Id);
+    FDisplayOrder.Add(project.Id);
+  end;
   self.Modified := true;
 end;
 
 procedure TGroup.DeleteProject(id: string);
+var
+  project: TProject;
 begin
   FProjects.Remove(id);
+  FBuildOrder.Remove(id);
+  FDisplayOrder.Remove(id);
   if FActiveProject.Id = id then
     FActiveProject := nil;
   self.Modified := true;
@@ -98,32 +114,82 @@ begin
   //self.Modified := true;
 end;
 
-procedure TGroup.CreateNewProject(projectType: TProjectType; options: TVisualMASMOptions);
+function TGroup.CreateNewProject(projectType: TProjectType; options: TVisualMASMOptions): TProject;
 var
   project: TProject;
 begin
+  result := nil;
+
   case projectType of
     ptWin32:
       begin
         project := CreateProject('Win32App.exe',projectType);
+        project.CreateProjectFile(WIN_MANIFEST_FILENAME, options, pftManifest);
+        project.CreateProjectFile(WIN_RESOURCE_FILENAME, options, pftRC);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
+      end;
+    ptWin32Dlg:
+      begin
+        project := CreateProject('Win32AppDlg.exe',projectType);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
+        project.CreateProjectFile(WIN_MANIFEST_FILENAME, options, pftManifest);
+        project.CreateProjectFile('', options, pftDLG);
+      end;
+    ptWin32Con:
+      begin
+        project := CreateProject('Win32Con.exe',projectType);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
       end;
     ptWin64:
       begin
         project := CreateProject('Win64App.exe',projectType);
+        project.CreateProjectFile(WIN_MANIFEST_FILENAME, options, pftManifest);
+        project.CreateProjectFile(WIN_RESOURCE_FILENAME, options, pftRC);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
       end;
     ptDos16COM:
       begin
         project := CreateProject('Program.com',projectType);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
       end;
     ptDos16EXE:
       begin
         project := CreateProject('Program.exe',projectType);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
+      end;
+    ptLib:
+      begin
+        project := CreateProject('MyLibrary.lib',projectType);
+        project.CreateProjectFile('readme.txt', options, pftTXT);
+      end;
+    ptWin32DLL:
+      begin
+        project := CreateProject('Win32.dll',projectType);
+        project.CreateProjectFile(WIN_DLL_MODULE_FILENAME, options, pftDef);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
+      end;
+    ptWin64DLL:
+      begin
+        project := CreateProject('Win64.dll',projectType);
+        project.CreateProjectFile(WIN_DLL_MODULE_FILENAME, options, pftDef);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
+      end;
+    ptWin16DLL:
+      begin
+        project := CreateProject('Win16.dll',projectType);
+        project.CreateProjectFile(WIN_DLL_MODULE_FILENAME, options, pftDef);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
+      end;
+    ptWin16:
+      begin
+        project := CreateProject('Win16App.exe',projectType);
+        project.CreateProjectFile(DEFAULT_FILE_NAME, options);
       end;
   end;
 
-  project.CreateProjectFile(DEFAULT_FILE_NAME, options);
   AddProject(project);
   SetActiveProject(project);
+  result := project;
 end;
 
 function TGroup.CreateProject(name: string; projectType: TProjectType = ptWin32): TProject;
@@ -180,6 +246,41 @@ begin
   end;
 end;
 
+function TGroup.GetProjectByFileId(id: string): TProject;
+var
+  project: TProject;
+  projectFile: TProjectFile;
+begin
+  result := nil;
+  for project in FProjects.Values do
+  begin
+    for projectFile in project.ProjectFiles.Values do
+    begin
+      if projectFile.Id = id then
+      begin
+        result := project;
+        exit;
+      end;
+    end;
+  end;
+end;
+
+function TGroup.GetProjectByIntId(intId: integer): TProject;
+var
+  project: TProject;
+  projectFile: TProjectFile;
+begin
+  result := nil;
+  for project in FProjects.Values do
+  begin
+    if project.IntId = intId then
+    begin
+      result := project;
+      exit;
+    end;
+  end;
+end;
+
 function TGroup.GetProjectFileById(id: string): TProjectFile;
 var
   project: TProject;
@@ -195,6 +296,28 @@ begin
         result := projectFile;
         exit;
       end;
+      if (projectFile.ChildFileASMId = id) or (projectFile.ChildFileRCId = id) then
+      begin
+        result := project.ProjectFile[id];
+        exit;
+      end;
+    end;
+  end;
+end;
+
+function TGroup.GetBuildOrderForProject(id: string): integer;
+var
+  projectId: string;
+  i: integer;
+begin
+  result := 0;
+  if id = '' then exit;
+  for i := 0 to FBuildorder.Count-1 do
+  begin
+    if id = FBuildorder.Items[i] then
+    begin
+      result := i+1;
+      exit;
     end;
   end;
 end;
